@@ -1,0 +1,5 @@
+name: class-booker
+
+dependencies:
+  - python=3.7
+  - selenium
