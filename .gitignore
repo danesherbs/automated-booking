@@ -104,4 +104,4 @@ venv.bak/
 .mypy_cache/
 
 # login credentials
-credentials.json
+navigator/credentials.json
