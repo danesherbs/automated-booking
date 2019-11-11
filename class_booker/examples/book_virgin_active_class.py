@@ -1,25 +1,23 @@
-import json
 from selenium import webdriver
+from class_booker.virgin_active_navigator import VirginActiveNavigator
 
-from class_booker.navigator.navigator import Navigator
-from class_booker.navigator.virgin_active_behaviour import VirginActiveNavigator
 
+# Define website navigator
 driver = webdriver.Safari()
-navigator_behaviour = VirginActiveNavigator()
-navigator = Navigator(driver, navigator_behaviour)
+navigator = VirginActiveNavigator(driver)
 
 # Retrieve credentials
-with open('credentials.json', 'r') as f:
-    json_file = json.load(f)
-    username, password = json_file["username"], json_file["password"]
+username = 'username'
+password = 'password'
 
 # Define class details
 class_details = {
-    'club_name': 'Islington Angel',
-    'time': 'Morning',
+    'club_name': 'Chelsea',
+    'time': 'Evening',
     'class_name': 'Pilates',
-    'day_of_week': 'Sunday'
+    'day_of_week': 'Tuesday'
 }
 
+# Book class
 navigator.login(username, password)
 navigator.book_class(class_details)
