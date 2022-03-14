@@ -10,14 +10,11 @@ navigator = VirginActiveNavigator(driver)
 username = 'username'
 password = 'password'
 
-# Define class details
-class_details = {
+# Book class
+navigator.login(username, password)
+navigator.book_class({
     'club_name': 'Chelsea',
     'time': 'Evening',
     'class_name': 'Pilates',
     'day_of_week': 'Tuesday'
-}
-
-# Book class
-navigator.login(username, password)
-navigator.book_class(class_details)
+})
