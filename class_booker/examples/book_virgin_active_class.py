@@ -2,16 +2,16 @@ from selenium import webdriver
 from class_booker.virgin_active_navigator import VirginActiveNavigator
 
 
-# Define website navigator
+# Define navigator
 driver = webdriver.Safari()
 navigator = VirginActiveNavigator(driver)
 
-# Retrieve credentials
-username = 'username'
-password = 'password'
-
 # Book class
-navigator.login(username, password)
+navigator.login(
+    username="my_username",
+    password="my_password"
+)
+
 navigator.book_class({
     'club_name': 'Chelsea',
     'time': 'Evening',
